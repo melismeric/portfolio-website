@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("src/Montserrat-Regular.ttf");
+}
+
+
+body {
+        background-color: #ffffff;
+         text-align: center;
+        font-family: "Montserrat-Regular";
+        font-weight: bold;
+        color:#cf4521;
+    }
+
+    .header {
+      background-color: #ffffff;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      padding: 0 50px;
+    }
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+    .footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+
+      .header{
+        line-height: 1.0;
+      }
+
+      .header a{
+        font-size: 10px;
+      }
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+
+</style>
+<div class="header sticky-top" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+      <a class="text-dark"  href="index.html" style="text-decoration: none;  text-shadow: 2px 2px #cf4521;">
+        <h1 style="color:  #ffab95; font-weight: 900;">melis meriç</h1>
+      </a>
+        <a style="font-weight: bold; color:#ff7b5b">is a London-based Software Developer and Creative Coder currently studying MSc Creative Computing at the University of the Arts London. Graduated from Computer Science and Engineering with Art Theory and Criticism minor from Sabanci University in Turkey. </a>
+        <br></br>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+      <a>zmelismeric@gmail.com</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="src/cv.pdf">cv</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="https://github.com/melismeric">github</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="https://www.linkedin.com/in/zeynep-melis-meri%C3%A7-04b481172/">linkedin</a>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ff7b5b; border-color:#cf4521;; font-weight: bold;">
+        Spark AR Filters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #fab1c2;">
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/ig/hello0melo/" target="_blank" style="font-weight: bold;">Personal Portfolio</a></li>
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/fb/akustikhaneperformansevi/" target="_blank" style="font-weight: bold;" >Akustikhane</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</div>
+</head>
+<body>
+
+    <!-- First Container -->
+ <div class="container p-1 text-center">
+    <h2 class="margin">Physical Computing Course</h2>
+    <h6>The Physical Computing course was a big step for me to learn implementing software to create interactive environments. We learned basic prototyping, building circuits, and coding to communicate with microcontrollers and embedded systems such as building Arduino from scratch or implementing projects using sensors. We also practiced 3D modeling using Fusion360. Here are some projects and models I developed in the course.</h6>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <video width="620" height="440"
+                src="src/va455/Stand alone Arduino.mp4" autoplay controls>
+                </video>
+            </div>
+            <div class="carousel-item">
+                <img style="width:100%" src="src/va455/Clean Wallet Project.jpg">
+            </div>
+            <div class="carousel-item">
+                <img style="width:100%" src="src/va455/designChallenge6 v3.jpg">
+            </div>
+            <div class="carousel-item">
+                <img style="width:30%" src="src/va455/va1.jpg">
+            </div>
+            <div class="carousel-item">
+                <img style="width:50%" src="src/va455/va2.jpg">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+ 
+  </div>
+
+
+<div class="mt-5 p-4 text-center">
+  <p>© 2021 by Melis Meriç </p>
+</div>
+
+</body>
+</html>

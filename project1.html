@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+  <script src = "https://mimicproject.com/libs/maximilian.js"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("src/Montserrat-Regular.ttf");
+}
+
+
+body {
+        background-color: #000000;
+         text-align: center;
+        font-family: "Montserrat-Regular";
+        font-weight: bold;
+        color:#fdd2c7;
+    }
+
+    .header {
+      background-color: #000000;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      padding: 0 50px;
+    }
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+    .footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+
+      .header{
+        line-height: 1.0;
+      }
+
+      .header a{
+        font-size: 10px;
+      }
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+
+
+</style>
+<div class="header sticky-top" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+      <a class="text-dark"  href="index.html" style="text-decoration: none;  text-shadow: 2px 2px #cf4521;">
+        <h1 style="color:  #ffab95; font-weight: 900;">melis meriç</h1>
+      </a>
+        <a>is a London-based Software Developer and Creative Coder currently studying MSc Creative Computing at the University of the Arts London. Graduated from Computer Science and Engineering with Art Theory and Criticism minor from Sabanci University in Turkey. </a>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+      <a>zmelismeric@gmail.com</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="src/cv.pdf">cv</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="https://github.com/melismeric">github</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="https://www.linkedin.com/in/zeynep-melis-meri%C3%A7-04b481172/">linkedin</a>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ff7b5b; border-color:#cf4521;; font-weight: bold;">
+        Spark AR Filters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #fab1c2;">
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/ig/hello0melo/" target="_blank" style="font-weight: bold;">Personal Portfolio</a></li>
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/fb/akustikhaneperformansevi/" target="_blank" style="font-weight: bold;" >Akustikhane</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</div>
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <script id="vertexShader" type="x-shader/x-vertex">
+                uniform highp float time;
+            
+                void main() {
+                    gl_Position = vec4(position,1.0) ;                
+                }
+            </script>
+            <script id="fragmentShader" type="x-shader/x-fragment">
+                //============================================================
+                //PUT YOUR GLSL CODE HERE
+                //============================================================
+                
+                    precision highp float;
+            uniform float time;
+            uniform vec2 resolution;
+            uniform vec2 mouse;
+            #define M_PI 3.14159265358979323846
+            #define TWO_PI 6.28318530718
+            
+            vec3 hsb2rgb( in vec3 c ){
+            vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
+                                     6.0)-3.0)-1.0,
+                             0.0,
+                             1.0 );
+            rgb = rgb*rgb*(3.0-2.0*rgb);
+            return c.z * mix( vec3(1.0), rgb, c.y);
+            }
+            
+            void main(void) {
+            vec2 st = gl_FragCoord.xy/resolution;
+            vec3 color = vec3(0.0);
+            vec3 color2 = vec3(0.0);
+            vec3 color3 = vec3(0.0);
+            
+            // Use polar coordinates instead of cartesian
+            vec2 toCenter = vec2(mouse.y)-st;
+            float angle = atan(toCenter.y,toCenter.x)*time;
+            float radius = length(toCenter)*5.0;
+            
+            color = hsb2rgb(vec3((angle/TWO_PI)+0.5,radius,1.0));
+            
+            vec2 toCenter2 = vec2(mouse.x)-st;
+            float angle2 = atan(toCenter2.y,toCenter2.x)*time;
+            float radius2 = length(toCenter2)*5.0;
+            
+            color2 = hsb2rgb(vec3((angle2/TWO_PI)+0.5,radius2,1.0));
+             
+            vec2 toCenter3 = vec2(mouse)-st;
+            float angle3 = atan(toCenter3.y,toCenter3.x)*time;
+            float radius3 = length(toCenter3)*5.0;
+            
+            color3 = hsb2rgb(vec3((angle3/M_PI)*1.5,radius3,1.0));
+            
+            gl_FragColor = vec4(color + color2 + color3,1.0);
+                
+            }
+            
+            //============================================================
+                //END OF GLSL CODE
+                //============================================================
+            </script>
+            <script>
+                 //change the resolution here. 1 is highest
+                var pixel_resolution = 2;
+                var stats;
+                var camera, scene, renderer;
+                var uniforms;
+            
+                init();
+                animate();
+                function init() {
+            
+                    camera = new THREE.Camera();
+                    camera.position.z = 1;
+                    scene = new THREE.Scene();
+                    var geometry = new THREE.PlaneBufferGeometry(2,2);
+                    uniforms = { time: { type: 'f', value: 1.0 }, resolution: { type: 'v2', value: new THREE.Vector2() }, mouse: {type: "v2", value: new THREE.Vector2()}};
+                    var material = new THREE.ShaderMaterial({ uniforms: uniforms, vertexShader: document.getElementById('vertexShader').textContent, fragmentShader: document.getElementById('fragmentShader').textContent });
+                    var mesh = new THREE.Mesh(geometry, material);
+                    scene.add(mesh);
+                    renderer = new THREE.WebGLRenderer();
+                    //Hack here to change resolution 
+                    renderer.setPixelRatio(window.devicePixelRatio / pixel_resolution);
+                    document.body.appendChild(renderer.domElement);
+                    onWindowResize();
+                    window.addEventListener('resize', onWindowResize, false);
+                    window.addEventListener('mousemove', onMouseMove, false);
+                    
+            
+                
+            
+                }
+                function onWindowResize(event) {
+                    renderer.setSize(window.innerWidth/1.5, window.innerHeight/1.5);
+                    uniforms.resolution.value.x = renderer.domElement.width;
+                    uniforms.resolution.value.y = renderer.domElement.height;
+            
+                }
+                function animate() {
+                    requestAnimationFrame(animate);
+                    render();
+                }
+                function onMouseMove( event ) {
+                    uniforms.mouse.value.x = ( event.clientX / window.innerWidth );
+                     uniforms.mouse.value.y = ( 1-(event.clientY) / window.innerHeight
+                     );
+                }
+                function render() {
+                    uniforms.time.value += 0.01;
+                    renderer.render(scene, camera);
+                }
+            </script>
+        </div>   
+    </div>        
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm" style="text-align: left;">
+            <h5 style="font-weight: bold;" >Kaleidoscope</h5>
+            <p>Shader created with GLSL & 3js for the course project of CCI - Coding One: Advanced Creative Coding. Move your cursor to interact with the colors.</p>
+            <h5 style="font-weight: bold;" >Source Code</h5>
+            <h6><a style="font-weight: bold; color:#fdd2c7" href="https://github.com/melismeric/UAL-CodingOne/tree/main/3js/GLSL">github</a></h6>
+            <h6><a style="font-weight: bold; color:#fdd2c7" href="https://mimicproject.com/code/e1a6eab9-ce73-841f-be61-e19c5daf5b33">MIMIC</a></h6>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>  
+    <div class="row">
+        <div class="col-sm">
+            <a style="font-weight: bold; color:#fdd2c7" href="project2.html">
+                <h5 style="font-weight: bold;" >next project ></h5>
+            </a>
+        </div>
+    </div>    
+</div>
+
+<div class="mt-5 p-4 text-center">
+    <p>© 2021 by Melis Meriç </p>
+</div>
+
+</body>
+</html>

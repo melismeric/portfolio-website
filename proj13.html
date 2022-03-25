@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+  <script src = "https://mimicproject.com/libs/maximilian.js"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+* {
+  box-sizing: border-box;
+}
+@font-face {
+    font-family: "Montserrat-Regular";
+    src: url("src/Montserrat-Regular.ttf");
+}
+
+
+body {
+        background-color: #ffffff;
+         text-align: center;
+        font-family: "Montserrat-Regular";
+        font-weight: bold;
+        color:#cf4521;
+    }
+
+    .header {
+      background-color: #ffffff;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .row {
+      display: -ms-flexbox; /* IE10 */
+      display: flex;
+      -ms-flex-wrap: wrap; /* IE10 */
+      flex-wrap: wrap;
+      padding: 0 50px;
+    }
+    canvas {
+        width: 100%;
+        height: 100%;
+    }
+    .footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+    /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+      }
+
+      .header{
+        line-height: 1.0;
+      }
+
+      .header a{
+        font-size: 10px;
+      }
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+    .iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+<div class="header sticky-top" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+      <a class="text-dark"  href="index.html" style="text-decoration: none;  text-shadow: 2px 2px #cf4521;">
+        <h1 style="color:  #ffab95; font-weight: 900;">melis meriç</h1>
+      </a>
+        <a style="font-weight: bold; color:#ff7b5b">is a London-based Software Developer and Creative Coder currently studying MSc Creative Computing at the University of the Arts London. Graduated from Computer Science and Engineering with Art Theory and Criticism minor from Sabanci University in Turkey. </a>
+        <br></br>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+      <a>zmelismeric@gmail.com</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="src/cv.pdf">cv</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="https://github.com/melismeric">github</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#cf4521" href="https://www.linkedin.com/in/zeynep-melis-meri%C3%A7-04b481172/">linkedin</a>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ff7b5b; border-color:#cf4521;; font-weight: bold;">
+        Spark AR Filters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #fab1c2;">
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/ig/hello0melo/" target="_blank" style="font-weight: bold;">Personal Portfolio</a></li>
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/fb/akustikhaneperformansevi/" target="_blank" style="font-weight: bold;" >Akustikhane</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</div>
+</head>
+
+<body>
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="row">
+            <div class="col-sm-8">
+              <div class="iframe-container">
+                <iframe width="620" height="440"
+                src="https://www.youtube.com/embed/fp3bxvXpxOA?autoplay=1&mute=1&loop=1">
+                </iframe>
+              </div>
+            </div>   
+            <div class="col-sm-4" style="text-align: left;">
+                <h5 style="font-weight: bold;" >Dark detecting Circuit for your pumpkins</h5>
+                <p>In this example, I used a photoresistor, 10K ohm resistor, 2N3904 NPN transistor to build a dark detecting circuit. As shown in the circuit schematic below, when there is light, the particles of light hit the phototransistor, which enables the current to pass through the transistor, and with it the LED is switched off. When there is no light current freely passes through the transistor, lighting up the LED. Then I carved a pumpkin and placed it on the circuit. The pumpkin lights up when it is dark.</p>
+            
+                <h6><a style="font-weight: bold; color:#cf4521" href="https://github.com/melismeric/openglGAME">Source Code</a></h6>
+                <a style="font-weight: bold; color:#cf4521"  href="proj12.html">
+                  <h5 style="font-weight: bold; color:#cf4521" >next project ></h5>
+              </a>
+            </div>
+        </div>          
+    </div>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+
+<footer class="mt-5 p-4 text-center">
+  <p>© 2021 by Melis Meriç </p>
+</footer>
+
+</body>
+</html>

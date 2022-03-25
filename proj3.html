@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/109/three.min.js"></script>
+  <script src = "https://mimicproject.com/libs/maximilian.js"></script>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("src/Montserrat-Regular.ttf");
+}
+
+body {
+  background-color: #000000;
+  font-family: "Montserrat-Regular";
+  font-weight: bold;
+  color:#fdd2c7;
+}
+
+.header {
+  background-color: #000000;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:60px;   /* Height of the footer */
+}
+
+.iframe-container{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; 
+  height: 0;
+}
+.iframe-container iframe{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .header{
+    line-height: 1.0;
+  }
+
+  .header a{
+    font-size: 10px;
+  }
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+
+</style>
+<div class="header sticky-top" style="margin-top: 10px;">
+  <div class="row">
+    <div class="col-md-6" style="text-align: left;">
+      <a class="text-dark"  href="index.html" style="text-decoration: none;  text-shadow: 2px 2px #cf4521;">
+        <h1 style="color:  #ffab95; font-weight: 900;">melis meriç</h1>
+      </a>
+        <a>is a London-based Software Developer and Creative Coder currently studying MSc Creative Computing at the University of the Arts London. Graduated from Computer Science and Engineering with Art Theory and Criticism minor from Sabanci University in Turkey. </a>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+      <a>zmelismeric@gmail.com</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="src/cv.pdf">cv</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="https://github.com/melismeric">github</a>
+      <a>|</a>
+      <a style="font-weight: bold; color:#fdd2c7" href="https://www.linkedin.com/in/zeynep-melis-meri%C3%A7-04b481172/">linkedin</a>
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle btn-sm" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #ff7b5b; border-color:#cf4521;; font-weight: bold;">
+        Spark AR Filters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #fab1c2;">
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/ig/hello0melo/" target="_blank" style="font-weight: bold;">Personal Portfolio</a></li>
+        <li><a class="dropdown-item" href="https://www.facebook.com/sparkarhub/portfolios/fb/akustikhaneperformansevi/" target="_blank" style="font-weight: bold;" >Akustikhane</a></li>
+        </ul>
+      </div>
+  </div>
+  </div>
+</div>
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="row"> 
+          <img style="width:100%; margin-top: 20px;" src="src/wtmxer.gif"> 
+      </div> 
+      <br></br>
+      <div class="row"> 
+        <div class="col-sm-6">
+            <h1 style="font-weight: bold;" >WETMIXER</h1>
+            <h6 style="font-weight: bold;" >Advanced Physical Computing Final Project - 2021</h6>
+            <h6><a style="font-weight: bold; color:#fdd2c7" href="https://github.com/melismeric/UAL-CCI-PCOMP/blob/main/portfolio_of_work/Final%20Project%20Blog/final_proj/final_proj_wetmixer.ino">Arduino Source Code</a></h6>
+            <h6 style="font-weight: bold;" >Equipments:</h6>
+            <ul>
+                <li>Arduino Leonardo</li>
+                <li>LED strip</li>
+                <li>Resistors (220 ohm, 10M ohm)</li>
+                <li>Sound Detector</li>
+                <li>Conductive tape</li>
+                <li>9V battery</li>
+                <li>10nF capacitor</li>
+                <li>Two metal bowls</li>
+                <li>Speakers</li>
+                <li>One potentiometer </li>
+              </ul>
+        </div>
+          <div class="col-sm-6" style="text-align: left;">
+            <p>This project aims to create sounds and turn on LEDs by touching the water. I aim to use water as an interface and use the conductivity of both water and skin. I built a set using two metal bowls, a LED strip, and speakers. Inside the bowls, I put salty water to increase the conductivity. When someone touches the water in one bowl it increases the number of LEDs turning on. According to the electrical charge of that person the number of LEDs turning on changes. Also if multiple people touch the water they have a chance to turn up more LEDs than one person. Using the potentiometer the sensitivity of the LEDs can be changed. If a person touches the water in the other bowl and also touches the conductive surface near it, it activates the analog synthesizer and creates sound. The sound changes according to the electrical charge of the person touching it and their interaction with water. If someone else touches that person or water it creates a different sound. </p>
+          </div>
+        </div>
+      </div> 
+
+      <br></br>
+        <div class="row"> 
+          <div class="col-sm" style="text-align: center;">
+            <div class="iframe-container">
+              <iframe width="1000" height="630"
+              src="https://www.youtube.com/embed/AfvHVy7qO-c">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+      <br></br>
+        
+        <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <img style="width:100%" src="src/wm1.png">
+           </div>
+          <div class="col-sm-6" style="text-align: left;">
+            <p>The project consists of two parts. The first part is the LED strip circuit consisting of a LED strip, Arduino Leonardo, resistors, a potentiometer, a conductive surface to put water in it. The second part is the analog synthesizer which consists of a CD40106BE chip, two conductive surfaces (creates sound when you touch both of them), speakers, and a capacitor. I used cardboard to build the housing.</p>
+            <p>In the project, the sound is both an input and output, which makes the circuit a feedback system. By touching the water and the conductive surface we create sound. The pressure we make while holding the conductive surface changes the sound. The sound detector takes the sound and changes the color of LEDs accordingly. This makes sound input for the color of the LEDs. Also by touching the water we increase the number of LEDs turning on which makes the water touch an input and LEDs an output. The potentiometer is connected as an analog input to the circuit, we use it to change. the sensitivity of the LED strip. Higher values make it easier to turn on more LEDs.</p>
+          </div>
+        </div>
+        <br></br>
+        <div class="row">
+          <div class="col-sm-6">
+            <h4 style="font-weight: bold;" >Circuits</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <img style="width:100%" src="src/wetmixer/circ1.png">
+           </div>
+           <div class="col-sm-6">
+            <img style="width:100%" src="src/wetmixer/circ2.png">
+           </div> 
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <img style="width:100%" src="src/wetmixer/test1.jpg">
+           </div>
+           <div class="col-sm-4">
+            <img style="width:100%" src="src/wetmixer/lehim.jpg">
+           </div> 
+           <div class="col-sm-4">
+            <img style="width:100%" src="src/wetmixer/test2.jpg">
+           </div> 
+        </div>
+    </div>  
+    <br></br>
+    <div class="row">
+      <div class="col-sm-">
+        <a class="text-dark"  href="proj4.html" style="text-align: center;">
+          <h5 style="font-weight: bold; color:#fdd2c7" >next project ></h5>
+       </a>
+      </div>
+    </div>
+  </div>
+
+
+   
+
+<div class="mt-5 p-4 text-center">
+  <p>© 2021 by Melis Meriç </p>
+</div>
+
+</body>
+</html>
